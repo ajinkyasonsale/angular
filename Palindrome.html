@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Palindrome</title>
+</head>
+<body>
+<div style="margin-left: 25%;margin-top: 10px;">
+<input type="text" id="v" placeholder="Enter a Phrase" >
+<button onclick="palindrome()" style="background-color:
+aqua;border-radius:5px;">check </button>
+<ul id="appe">
+</ul>
+</div>
+<script type="text/javascript">
+function palindrome()
+{
+var p=document.getElementById("v").value;
+var len=p.length;
+var words=p.split(" ");
+for(i=0;i<len;i++)
+{
+var rev=words[i].split('').reverse().join('');
+
+if(words[i]==rev)
+{
+
+console.log(words[i]);
+
+var li =
+
+document.createElement('li',words[i]);
+document.getElementById('appe').appendChild(li).innerHTML=words[
+i];
+}
+}
+}
+</script>
+</body>
+</html>

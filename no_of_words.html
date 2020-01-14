@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>No Of Words</title>
+</head>
+
+<body>
+    <div>
+        <input id="w" type="text" placeholder="Enter phrase">
+        <button onclick="find()">Count</button>
+    </div>
+    <script type="text/javascript">
+        function find() {
+            var words = document.getElementById("w").value;
+            var a = words.split(" ");
+            document.write(a.length);
+        }
+    </script>
+</body>
+
+</html>

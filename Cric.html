@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Cricket Object</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="cric.css">
+</head>
+<body>
+<div>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Name</th>
+<th>Innings</th>
+<th>NotOut</th>
+<th>Runs</th>
+<th>Average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p id="code"></p></td>
+<td><p id="name"></p></td>
+<td><p id="inning"></p></td>
+<td><p id="notout"></p></td>
+<td><p id="runs"></p></td>
+<td><p id="average"></p></td>
+</tr>
+</tbody>
+</table>
+<button class="btn" onclick="update_record()">Update Record</button>
+</div>
+</body>
+<script>
+var batsman=new Object();
+batsman.bcode="25";
+batsman.bname="ajinkya";
+batsman.innings="111";
+batsman.notout="50";
+batsman.runs="1200";
+function average()
+{
+var a=batsman.runs/(batsman.innings-batsman.notout);
+return a.toFixed(2);
+}
+function update_record()
+{
+batsman.innings=Number(batsman.innings)+1;
+batsman.notout=Number(batsman.notout)+1;
+batsman.runs=Number(batsman.runs)+100;
+display();
+}
+function display()
+{
+console.log(batsman.bname);
+document.getElementById("code").innerHTML =batsman.bcode;
+document.getElementById("name").innerHTML =batsman.bname;
+document.getElementById("inning").innerHTML =batsman.innings;
+document.getElementById("notout").innerHTML =batsman.notout;
+document.getElementById("runs").innerHTML =batsman.runs;
+document.getElementById("average").innerHTML =average();
+}
+display();
+</script>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<div ng-app="myApp" ng-init="country=[{name:'india',population:2000,capital:'dehli',currency:'10000',img:'ind.jpg'},{name:'USA',population:1000,capital:'NEW-york',currency:'6000',img:'newy.jpg'}]">
+<input type="number" placeholder="Enter Value" ng-model="num" class="inp">
+<p>
+<table>
+<tr>
+<td>Name</td>
+<td>Population</td>
+<td>Capital</td>
+<td>Flag</td>
+<td>currency</td>
+</tr>
+<tr ng-repeat="c in country | orderBy:'name' | filter:num">
+<td>{{c.name | uppercase}}</td>
+<td>{{c.population }}</td>
+<td>{{c.capital}} </td>
+<td><img src="{{ c.img }}" style="width: 150px;height:100px;"/></td>
+<td>{{c.currency | currency : 'INR' }}</td>
+</tr>
+</table>
+</p>
+</div>
+</html>
+<script>
+var app=angular.module('myApp',[]);
+app.controller("firstContrl",function($scope,$filter){
+});
+</script>

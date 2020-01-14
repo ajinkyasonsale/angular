@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<script>
+function myfuction()
+{
+var str=document.getElementById("name").value;
+var result = pallindrome(str);
+alert(result);
+}
+function pallindrome(str)
+{
+var orignalstring;
+str = str.toLowerCase();
+orignalstring = str;
+str = str.split('');
+str = str.reverse();
+str =str.join('');
+var reverse = str;
+return reverse;
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text" name="name" id="name">
+<button type="submit" onclick="myfuction()">Submbit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Routing</title>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js">
+</script>
+</head>
+<body>
+<div ng-app = "mainApp">
+<p><a href = "#bookview">View Book</a></p>
+<p><a href = "#mobileview">View Mobile</a></p>
+<div ng-view></div>
+<script type="text/ng-template" id="bookview.htm">
+<h1>Book Information:</h1>
+<table ng-controller="bookctrl">
+<tr>
+<td>bookname</td>
+<td>price</td>
+<td>author</td>
+<td>edition</td>
+</tr>
+<tr ng-repeat="book in books">
+<td>{{book.bookname}}</td>
+<td>{{book.price}}</td>
+<td>{{book.author}}</td>
+<td>{{book.edition}}</td>
+</tr>
+</table>
+</script>
+<script type="text/ng-template" id="mobileview.htm">
+<h1>Mobile Information</h1>
+<table ng-controller="mobilectrl">
+<tr>
+<td>bookname</td>
+<td>price</td>
+</tr>
+<tr ng-repeat="mobile in mobiles">
+<td>{{mobile.mname}}</td>
+<td>{{mobile.price}}</td>
+</tr>
+</table>
+</script>
+</div>
+<script>
+var app=angular.module("mainApp",['ngRoute']);
+app.config(['$routeProvider',function($routeProvider)
+{
+$routeProvider
+.when('/bookview',{
+templateUrl:'bookview.htm',
+controller:'bookctrl'
+})
+.when('/mobileview',{
+templateUrl:'mobileview.htm',
+controller:'mobilectrl'
+})
+}]);
+app.controller("bookctrl",function($scope)
+{
+$scope.books=[{
+bookname: "mane",
+price:4000,
+author:"Mane",
+edition:"1",
+},
+{
+bookname: "mane2",
+price:4000,
+author:"Mane",
+edition:"2",
+},
+{
+bookname: "mane3",
+price:4000,
+author:"Mane",
+edition:"3",
+}
+]
+})
+app.controller("mobilectrl",function($scope)
+{
+$scope.mobiles=[
+{
+mname:"sony",
+price:2012,
+}]
+})
+</script>
+</body>
+</html>

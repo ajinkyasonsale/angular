@@ -1,0 +1,40 @@
+body
+{
+background-color:aliceblue;
+}
+table
+{
+margin: 25%;
+margin-top: 5px;
+margin-bottom: 5px;
+width:50%;
+border: 1px solid black;
+border-radius: 8px;
+}
+th,td
+{
+padding: 5px;
+border: 1px solid red;
+}
+th{
+font-size: 14px;
+}
+.btn
+{
+border: 1px solid beige;
+background-color: cornflowerblue;
+border-radius: 4px ;
+padding: 6px;
+font-size: 18px;
+margin:25%;
+margin-top: 0px;
+}
+.inp
+{
+padding: 5px;
+border: none;
+border-radius: 8px ;
+margin: 25%;
+width: 50%;
+margin-bottom: 0px;
+}
